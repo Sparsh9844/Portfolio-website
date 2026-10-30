@@ -5,13 +5,14 @@ const GITHUB = "https://github.com/Sparsh9844";
 
 /* The flagship project (StudyAI) is in index.html (#studyai); these are its screenshot tabs */
 const studyAiShots = [
-  { file: "dashboard.jpeg", label: "Dashboard", path: "dashboard" },
-  { file: "analytics.jpeg", label: "Analytics", path: "analytics" },
-  { file: "Revision.jpeg", label: "Revision", path: "revision" },
-  { file: "study_plan.jpeg", label: "Study Plan", path: "study-plan" },
-  { file: "AI.jpeg", label: "AI Assistant", path: "ai-assistant" },
-  { file: "subject_page.jpeg", label: "Subjects", path: "subjects" },
-  { file: "landing_page.jpeg", label: "Landing", path: "" },
+  { file: "dashboard.jpg", label: "Dashboard", path: "dashboard" },
+  { file: "dsa.jpg", label: "DSA Sheet", path: "dsa" },
+  { file: "aptitude.jpg", label: "Aptitude", path: "aptitude" },
+  { file: "core-cs.jpg", label: "Core CS", path: "core-cs" },
+  { file: "assistant.jpg", label: "Sage AI", path: "assistant" },
+  { file: "prep-hub.jpg", label: "Prep Hub", path: "prep-hub" },
+  { file: "flashcards.jpg", label: "Flashcards", path: "flashcards" },
+  { file: "landing.jpg", label: "Landing", path: "" },
 ];
 
 const projects = [
