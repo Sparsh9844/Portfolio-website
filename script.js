@@ -338,7 +338,7 @@ $("#copyEmail").addEventListener("click", copyEmail);
 const commands = [
   ...["about", "skills", "projects", "experience", "contact"].map((s) => ({ label: `Go to ${s}`, hint: "section", run: () => location.assign(`#${s}`) })),
   { label: "★ StudyAI: flagship project", hint: "section", run: () => location.assign("#studyai") },
-  { label: "Open StudyAI: live", hint: "vercel ↗", run: () => window.open("https://study-ai-u1l3.vercel.app", "_blank") },
+  { label: "Open StudyAI: live", hint: "vercel ↗", run: () => window.open("https://study-ai-mu-lime.vercel.app", "_blank") },
   { label: "StudyAI: source", hint: "github ↗", run: () => window.open(`${GITHUB}/StudyAI`, "_blank") },
   ...projects.filter((p) => p.live).map((p) => ({ label: `Open ${p.title}: live`, hint: "vercel ↗", run: () => window.open(p.live, "_blank") })),
   ...projects.map((p) => ({ label: `${p.title}: source`, hint: "github ↗", run: () => window.open(p.repo, "_blank") })),
