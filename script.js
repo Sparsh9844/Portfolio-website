@@ -186,24 +186,7 @@ $("#miniGrid").innerHTML = miniProjects
 
 /* StudyAI screenshot gallery */
 const shotMain = $("#shotMain"), shotPath = $("#shotPath"), shotTabs = $("#shotTabs");
-const shotBase = (s) => `assets/studyai/${s.file.replace(/\.jpg$/, "")}`;
-const shotSrcset = (s) => `${shotBase(s)}-720.webp 720w, ${shotBase(s)}-1280.webp 1280w`;
-/* preload the other screenshots only once the gallery is near the viewport, so they don't compete with first paint */
-const preloadShots = () =>
-  studyAiShots.forEach((s) => {
-    const img = new Image();
-    img.sizes = shotMain.sizes;
-    img.srcset = shotSrcset(s);
-  });
-const galleryIO = new IntersectionObserver(
-  (entries) => {
-    if (!entries.some((en) => en.isIntersecting)) return;
-    galleryIO.disconnect();
-    (window.requestIdleCallback || setTimeout)(preloadShots);
-  },
-  { rootMargin: "400px 0px" }
-);
-galleryIO.observe(shotMain);
+studyAiShots.forEach((s) => (new Image().src = `assets/studyai/${s.file}`));
 shotTabs.innerHTML = studyAiShots
   .map((s, i) => `<button class="shot-tab${i === 0 ? " active" : ""}" data-i="${i}">${s.label}</button>`)
   .join("");
@@ -211,8 +194,7 @@ const showShot = (i) => {
   const s = studyAiShots[i];
   shotMain.classList.add("fade");
   setTimeout(() => {
-    shotMain.srcset = shotSrcset(s);
-    shotMain.src = `${shotBase(s)}-1280.webp`;
+    shotMain.src = `assets/studyai/${s.file}`;
     shotMain.alt = `StudyAI ${s.label} screenshot`;
     shotPath.textContent = s.path;
     shotMain.classList.remove("fade");
@@ -239,18 +221,12 @@ filterBar.addEventListener("click", (e) => {
   });
 });
 
-/* card spotlight follows the mouse (one update per frame) */
+/* card spotlight follows the mouse */
 document.querySelectorAll(".project").forEach((card) => {
-  let frame = 0, x = 0, y = 0;
   card.addEventListener("mousemove", (e) => {
-    x = e.clientX; y = e.clientY;
-    if (frame) return;
-    frame = requestAnimationFrame(() => {
-      frame = 0;
-      const r = card.getBoundingClientRect();
-      card.style.setProperty("--mx", `${x - r.left}px`);
-      card.style.setProperty("--my", `${y - r.top}px`);
-    });
+    const r = card.getBoundingClientRect();
+    card.style.setProperty("--mx", `${e.clientX - r.left}px`);
+    card.style.setProperty("--my", `${e.clientY - r.top}px`);
   });
 });
 
@@ -266,18 +242,12 @@ const io = new IntersectionObserver(
 );
 document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
-/* cursor glow: transform only (no layout), one update per frame, mouse only */
+/* cursor glow */
 const glow = $(".cursor-glow");
-let glowFrame = 0, gx = 0, gy = 0;
 window.addEventListener("pointermove", (e) => {
-  if (e.pointerType !== "mouse") return;
-  gx = e.clientX; gy = e.clientY;
-  if (glowFrame) return;
-  glowFrame = requestAnimationFrame(() => {
-    glowFrame = 0;
-    glow.style.transform = `translate3d(${gx - 240}px, ${gy - 240}px, 0)`;
-  });
-}, { passive: true });
+  glow.style.left = `${e.clientX}px`;
+  glow.style.top = `${e.clientY}px`;
+});
 
 /* typed hero phrases */
 const phrases = ["scalable systems", "real-time apps", "RAG pipelines", "AI-powered SaaS", "clean APIs"];
@@ -320,7 +290,7 @@ if (reduceMotion) {
   const nextLine = () => {
     if (li >= termLines.length) return;
     const [html, wait] = termLines[li++];
-    term.insertAdjacentHTML("beforeend", (li > 1 ? "\n" : "") + html);
+    term.innerHTML += (li > 1 ? "\n" : "") + html;
     setTimeout(nextLine, wait + 160);
   };
   setTimeout(nextLine, 500);
