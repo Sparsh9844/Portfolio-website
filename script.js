@@ -3,7 +3,36 @@
    ========================================================= */
 const GITHUB = "https://github.com/Sparsh9844";
 
+/* The flagship project (StudyAI) is in index.html (#studyai); these are its screenshot tabs */
+const studyAiShots = [
+  { file: "dashboard.jpeg", label: "Dashboard", path: "dashboard" },
+  { file: "analytics.jpeg", label: "Analytics", path: "analytics" },
+  { file: "Revision.jpeg", label: "Revision", path: "revision" },
+  { file: "study_plan.jpeg", label: "Study Plan", path: "study-plan" },
+  { file: "AI.jpeg", label: "AI Assistant", path: "ai-assistant" },
+  { file: "subject_page.jpeg", label: "Subjects", path: "subjects" },
+  { file: "landing_page.jpeg", label: "Landing", path: "" },
+];
+
 const projects = [
+  {
+    title: "AskPdf: AI Document Q&A",
+    icon: "🔎",
+    tagline: "RAG platform with verifiable answers",
+    desc: "A RAG platform for chatting with PDF, DOCX and XLSX files. It runs vector search over 384-dim embeddings and streams answers in real time with source citations. It also includes fact-checking and quiz generation.",
+    highlights: [
+      "Vector search with MongoDB/Qdrant over 384-dim embeddings",
+      "Real-time answers streamed over SSE with source citations",
+      "Fact-checking and quiz generation",
+      "JWT auth, Redis caching and rate limiting",
+      "Frontend on Vercel, backend on Render",
+    ],
+    stack: ["React.js", "Node.js", "Express.js", "MongoDB", "Qdrant", "Redis", "Groq LLM", "SSE", "Vercel", "Render"],
+    tags: ["ai", "fullstack"],
+    live: "https://askpdf-rho.vercel.app",
+    repo: `${GITHUB}/AskPdf`,
+    featured: true,
+  },
   {
     title: "Scalable Real-Time Chat",
     icon: "💬",
@@ -19,24 +48,6 @@ const projects = [
     tags: ["realtime", "fullstack"],
     live: "https://real-time-chat-app-drab-eight.vercel.app",
     repo: `${GITHUB}/Real-Time_chat_app`,
-    featured: true,
-  },
-  {
-    title: "StudyAI",
-    icon: "📚",
-    tagline: "AI-powered study SaaS",
-    desc: "A study management platform with subject and topic tracking, spaced revision cycles (R1/R2/R3), study plans, notes and an analytics dashboard, with AI features powered by Groq.",
-    highlights: [
-      "Supabase auth with email confirmation",
-      "Revision tracking and progress analytics",
-      "AI study assistant (Groq LLM)",
-      "Real-time cloud sync on PostgreSQL",
-    ],
-    stack: ["Next.js", "React", "Tailwind CSS", "Supabase", "PostgreSQL", "Groq"],
-    tags: ["ai", "fullstack"],
-    live: "https://study-ai-u1l3.vercel.app",
-    repo: `${GITHUB}/StudyAI`,
-    featured: true,
   },
   {
     title: "YouTube Watch Party",
@@ -52,20 +63,6 @@ const projects = [
     tags: ["realtime", "fullstack"],
     live: "https://youtube-watch-party-system-rust.vercel.app",
     repo: `${GITHUB}/Youtube_watch_party_system`,
-  },
-  {
-    title: "Insight: Document Intelligence",
-    icon: "🔎",
-    tagline: "RAG with verifiable answers",
-    desc: "Goes beyond 'chat with a PDF'. It writes AI briefs for each document, runs multi-step research with inline citations, checks answers for grounding, fact-checks pasted text and builds a cross-document knowledge map.",
-    highlights: [
-      "Hybrid retrieval with a live research trace (SSE)",
-      "Citation chips with real page numbers",
-      "Claim-by-claim fact-checker and quiz generator",
-    ],
-    stack: ["React 19", "Express", "MongoDB", "Qdrant", "transformers.js", "Groq", "Tailwind v4"],
-    tags: ["ai", "fullstack"],
-    repo: `${GITHUB}/AskPdf`,
   },
   {
     title: "Sensai: AI Career Coach",
@@ -116,13 +113,14 @@ const miniProjects = [
 ];
 
 const skills = [
-  { group: "languages", icon: "⌨️", items: ["JavaScript", "Java", "Python", "SQL", "HTML5", "CSS3"] },
-  { group: "frontend", icon: "🎨", items: ["React.js", "Next.js", "Redux", "Tailwind CSS", "shadcn/ui", "Vite"] },
-  { group: "backend", icon: "🛠️", items: ["Node.js", "Express.js", "REST APIs", "Socket.IO", "JWT Auth", "System Design"] },
-  { group: "databases", icon: "🗄️", items: ["MongoDB", "PostgreSQL", "MySQL", "Supabase", "Prisma", "Redis", "Qdrant"] },
-  { group: "devops_cloud", icon: "☁️", items: ["Docker", "NGINX", "AWS", "Vercel", "Railway", "Git & GitHub", "GitHub Actions"] },
-  { group: "ai_ml", icon: "🧠", items: ["RAG Pipelines", "LLM Integration (Groq)", "Embeddings", "YOLOv8", "Agentic AI", "n8n"] },
-  { group: "cs_fundamentals", icon: "📐", items: ["Data Structures & Algorithms", "DBMS", "Operating Systems", "OOP"] },
+  { group: "languages", icon: "⌨️", items: ["JavaScript", "Java"] },
+  { group: "frontend", icon: "🎨", items: ["React.js", "Next.js", "Tailwind CSS", "HTML5", "CSS3"] },
+  { group: "backend", icon: "🛠️", items: ["Node.js", "Express.js", "REST APIs", "JWT Authentication", "Server-Sent Events", "Redis", "Socket.IO"] },
+  { group: "databases", icon: "🗄️", items: ["MongoDB", "PostgreSQL", "MySQL", "Supabase", "Qdrant (Vector DB)"] },
+  { group: "ai_ml", icon: "🧠", items: ["Agentic AI", "RAG", "Chunking", "Vector Embeddings", "LLM Integration (Groq)", "Claude Code"] },
+  { group: "cloud_devops", icon: "☁️", items: ["Git", "GitHub", "GitHub Actions", "CI/CD", "Docker", "AWS", "Vercel", "Render"] },
+  { group: "cs_fundamentals", icon: "📐", items: ["Data Structures & Algorithms", "DBMS", "Operating Systems"] },
+  { group: "soft_skills", icon: "🤝", items: ["Problem Solving", "Communication", "Team Collaboration", "Adaptability", "Time Management"] },
 ];
 
 const filters = [
@@ -184,6 +182,28 @@ $("#miniGrid").innerHTML = miniProjects
     </div>`
   )
   .join("");
+
+/* StudyAI screenshot gallery */
+const shotMain = $("#shotMain"), shotPath = $("#shotPath"), shotTabs = $("#shotTabs");
+studyAiShots.forEach((s) => (new Image().src = `assets/studyai/${s.file}`));
+shotTabs.innerHTML = studyAiShots
+  .map((s, i) => `<button class="shot-tab${i === 0 ? " active" : ""}" data-i="${i}">${s.label}</button>`)
+  .join("");
+const showShot = (i) => {
+  const s = studyAiShots[i];
+  shotMain.classList.add("fade");
+  setTimeout(() => {
+    shotMain.src = `assets/studyai/${s.file}`;
+    shotMain.alt = `StudyAI ${s.label} screenshot`;
+    shotPath.textContent = s.path;
+    shotMain.classList.remove("fade");
+  }, 180);
+  shotTabs.querySelectorAll(".shot-tab").forEach((b) => b.classList.toggle("active", +b.dataset.i === i));
+};
+shotTabs.addEventListener("click", (e) => {
+  const b = e.target.closest(".shot-tab");
+  if (b) showShot(+b.dataset.i);
+});
 
 /* filters */
 const filterBar = $("#filters");
@@ -252,12 +272,12 @@ const termLines = [
   [``, 0],
   [`<span class="p">➜</span> <span class="c">~</span> cat stack.json`, 400],
   [`{ <span class="k">"frontend"</span>: [<span class="s">"React"</span>, <span class="s">"Next.js"</span>, <span class="s">"Tailwind"</span>],`, 120],
-  [`  <span class="k">"backend"</span>:  [<span class="s">"Node"</span>, <span class="s">"Express"</span>, <span class="s">"Socket.IO"</span>],`, 120],
-  [`  <span class="k">"data"</span>:     [<span class="s">"MongoDB"</span>, <span class="s">"Postgres"</span>, <span class="s">"Redis"</span>],`, 120],
-  [`  <span class="k">"ops"</span>:      [<span class="s">"Docker"</span>, <span class="s">"NGINX"</span>, <span class="s">"AWS"</span>] }`, 200],
+  [`  <span class="k">"backend"</span>:  [<span class="s">"Node"</span>, <span class="s">"Express"</span>, <span class="s">"SSE"</span>],`, 120],
+  [`  <span class="k">"data"</span>:     [<span class="s">"MongoDB"</span>, <span class="s">"Postgres"</span>, <span class="s">"Qdrant"</span>],`, 120],
+  [`  <span class="k">"ai"</span>:       [<span class="s">"RAG"</span>, <span class="s">"Agentic AI"</span>, <span class="s">"Groq"</span>] }`, 200],
   [``, 0],
   [`<span class="p">➜</span> <span class="c">~</span> ls ./deployed`, 400],
-  [`<span class="c">chat-app/</span>  <span class="c">study-ai/</span>  <span class="c">watch-party/</span>  <span class="c">gh-finder/</span>`, 200],
+  [`<span class="s">★ study-ai/</span>  <span class="c">askpdf/</span>  <span class="c">chat-app/</span>  <span class="c">watch-party/</span>`, 200],
   [``, 0],
   [`<span class="p">➜</span> <span class="c">~</span> <span class="m">press</span> <span class="k">Ctrl+K</span> <span class="m">to explore ▌</span>`, 0],
 ];
@@ -317,6 +337,9 @@ $("#copyEmail").addEventListener("click", copyEmail);
    ========================================================= */
 const commands = [
   ...["about", "skills", "projects", "experience", "contact"].map((s) => ({ label: `Go to ${s}`, hint: "section", run: () => location.assign(`#${s}`) })),
+  { label: "★ StudyAI: flagship project", hint: "section", run: () => location.assign("#studyai") },
+  { label: "Open StudyAI: live", hint: "vercel ↗", run: () => window.open("https://study-ai-u1l3.vercel.app", "_blank") },
+  { label: "StudyAI: source", hint: "github ↗", run: () => window.open(`${GITHUB}/StudyAI`, "_blank") },
   ...projects.filter((p) => p.live).map((p) => ({ label: `Open ${p.title}: live`, hint: "vercel ↗", run: () => window.open(p.live, "_blank") })),
   ...projects.map((p) => ({ label: `${p.title}: source`, hint: "github ↗", run: () => window.open(p.repo, "_blank") })),
   { label: "Open GitHub profile", hint: "github ↗", run: () => window.open(GITHUB, "_blank") },

@@ -66,9 +66,9 @@
 
     <!-- STATS -->
     <section class="stats reveal">
-      <div class="stat"><span class="num" data-count="4">0</span><span class="label">live apps on Vercel</span></div>
+      <div class="stat"><span class="num" data-count="5">0</span><span class="label">live apps on Vercel</span></div>
       <div class="stat"><span class="num" data-count="25" data-suffix="+">0</span><span class="label">public repos</span></div>
-      <div class="stat"><span class="num" data-count="20" data-suffix="+">0</span><span class="label">technologies used</span></div>
+      <div class="stat"><span class="num">8.9</span><span class="label">CGPA / 10</span></div>
       <div class="stat"><span class="num">AWS</span><span class="label">Certified Cloud Practitioner</span></div>
     </section>
 
@@ -78,26 +78,26 @@
       <div class="about-grid">
         <div class="about-text reveal">
           <p>
-            I'm a Computer Science &amp; Engineering student at <strong>Sharda University</strong> (class of 2028)
-            and an <strong>AI/ML Intern at AiDoBOT Technologies</strong>, where I build agent-style AI systems
-            and ML pipelines.
+            I'm a Computer Science &amp; Engineering student at <strong>Sharda University</strong> (CGPA 8.9/10)
+            and an <strong>AI/ML Intern at AiDoBOT Technologies</strong>, where I build agentic AI systems,
+            multi-agent workflows and RAG pipelines.
           </p>
           <p>
-            I like the hard parts of the stack: horizontally scaling WebSockets with Redis Pub/Sub,
-            keeping video playback in sync across clients, and making LLM answers
-            <em>verifiable</em> with citations and grounding checks. I care about clean architecture and
-            interfaces that feel fast.
+            I build scalable, AI-integrated web apps with React, Node.js, Express, MongoDB and PostgreSQL.
+            I like the hard parts: streaming LLM answers over SSE with <em>verifiable</em> citations,
+            securing APIs with JWT, caching and rate limiting, and scaling WebSockets with Redis Pub/Sub.
           </p>
-          <p class="muted">Right now I'm exploring agentic AI, system design and Docker-based deployments.</p>
+          <p class="muted">Right now I'm going deeper into agentic AI, vector search and CI/CD.</p>
         </div>
         <div class="code-card reveal">
 <pre><code><span class="kw">const</span> <span class="var">sparsh</span> = {
   <span class="prop">role</span>: <span class="str">"Full Stack Developer"</span>,
   <span class="prop">location</span>: <span class="str">"Noida, India"</span>,
-  <span class="prop">education</span>: <span class="str">"B.Tech CSE @ Sharda '28"</span>,
+  <span class="prop">education</span>: <span class="str">"B.Tech CSE @ Sharda"</span>,
+  <span class="prop">cgpa</span>: <span class="bool">8.9</span>,
   <span class="prop">currently</span>: <span class="str">"AI/ML Intern @ AiDoBOT"</span>,
-  <span class="prop">certified</span>: [<span class="str">"AWS Cloud Practitioner"</span>],
-  <span class="prop">loves</span>: [<span class="str">"real-time"</span>, <span class="str">"RAG"</span>, <span class="str">"DX"</span>],
+  <span class="prop">certified</span>: [<span class="str">"AWS Cloud Practitioner"</span>, <span class="str">"NPTEL PM"</span>],
+  <span class="prop">loves</span>: [<span class="str">"agentic AI"</span>, <span class="str">"RAG"</span>, <span class="str">"DX"</span>],
   <span class="prop">coffee</span>: <span class="bool">true</span>,
 };</code></pre>
         </div>
@@ -113,6 +113,50 @@
     <!-- PROJECTS -->
     <section id="projects" class="section">
       <h2 class="section-title reveal"><span class="hash">03.</span> projects<span class="accent">()</span></h2>
+
+      <!-- FLAGSHIP: StudyAI -->
+      <article class="flagship reveal" id="studyai">
+        <div class="flag-info">
+          <div class="flag-badges">
+            <span class="badge-flag">★ flagship project</span>
+            <span class="badge-live">live on vercel</span>
+          </div>
+          <h3>StudyAI <span class="muted flag-alias">/ StudyFlow AI</span></h3>
+          <p class="p-tagline">// SaaS AI study assistant &amp; smart study planner</p>
+          <p class="desc">
+            A full SaaS platform that helps students plan, study and revise. It combines smart plan tracking,
+            spaced revision monitoring (R1 → R2 → R3), a graph analytics dashboard and an AI assistant for chat,
+            notes and doubt-solving. Supabase handles auth and keeps data in sync in real time.
+          </p>
+          <ul class="highlights">
+            <li>AI-generated study plans and an AI study assistant (Groq LLM)</li>
+            <li>Smart plan tracking for subjects, topics and upcoming exams</li>
+            <li>Revision monitoring across R1/R2/R3 cycles</li>
+            <li>Graph analytics dashboard for progress and performance</li>
+            <li>Supabase auth with email confirmation</li>
+            <li>Real-time data sync on PostgreSQL</li>
+          </ul>
+          <div class="stack">
+            <span>React.js</span><span>Next.js</span><span>Node.js</span><span>Express</span><span>Supabase</span><span>PostgreSQL</span><span>Groq</span><span>Tailwind CSS</span><span>Vercel</span>
+          </div>
+          <div class="p-links">
+            <a class="p-link live" href="https://study-ai-u1l3.vercel.app" target="_blank" rel="noopener">▶ Live demo</a>
+            <a class="p-link" href="https://github.com/Sparsh9844/StudyAI" target="_blank" rel="noopener">&lt;/&gt; Source</a>
+          </div>
+        </div>
+        <div class="flag-gallery">
+          <div class="browser">
+            <div class="term-bar">
+              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+              <span class="url-bar">study-ai-u1l3.vercel.app/<span id="shotPath">dashboard</span></span>
+            </div>
+            <img id="shotMain" src="assets/studyai/dashboard.jpeg" alt="StudyAI dashboard screenshot" />
+          </div>
+          <div class="shot-tabs" id="shotTabs"></div>
+        </div>
+      </article>
+
+      <h3 class="sub-title reveal">// more projects</h3>
       <div class="filters reveal" id="filters" role="tablist"></div>
       <div class="projects-grid" id="projectsGrid"></div>
 
@@ -128,9 +172,16 @@
           <span class="t-dot"></span>
           <div class="t-head"><h3>AI/ML Intern · <span class="accent">AiDoBOT Technologies Pvt. Ltd.</span></h3><span class="t-date">2026 — Present · On-site</span></div>
           <ul>
-            <li>Building agent-like AI systems with OpenCode, Lovable, Cursor and Antigravity for autonomous task execution.</li>
-            <li>Training ML pipelines on Google Colab and Kaggle and integrating the models into scalable apps.</li>
+            <li>Building agentic AI systems and multi-agent workflows, developing subagents with Claude Code alongside OpenCode, Cursor, Lovable and Antigravity.</li>
+            <li>Developing RAG pipelines with document chunking, embeddings and vector databases for accurate, context-aware retrieval.</li>
           </ul>
+          <a class="t-link" href="https://drive.google.com/file/d/1ORj2Pi0wG9jYRgL5TCgiI9qjIxR2AIqq/view?usp=sharing" target="_blank" rel="noopener">view credential ↗</a>
+        </li>
+        <li class="reveal">
+          <span class="t-dot"></span>
+          <div class="t-head"><h3>NPTEL Certification in Project Management · <span class="accent">NPTEL</span></h3><span class="t-date">Sep 2026</span></div>
+          <ul><li>Certified in project planning, scheduling, risk and resource management.</li></ul>
+          <a class="t-link" href="https://drive.google.com/file/d/1hMt2MMQCztX972qvLSXKQjh-qUH5aKYp/view?usp=sharing" target="_blank" rel="noopener">view certificate ↗</a>
         </li>
         <li class="reveal">
           <span class="t-dot"></span>
@@ -144,8 +195,8 @@
         </li>
         <li class="reveal">
           <span class="t-dot"></span>
-          <div class="t-head"><h3>B.Tech, Computer Science &amp; Engineering · <span class="accent">Sharda University</span></h3><span class="t-date">Expected 2028</span></div>
-          <ul><li>Coursework: Data Structures &amp; Algorithms, DBMS, Operating Systems, System Design.</li></ul>
+          <div class="t-head"><h3>B.Tech, Computer Science &amp; Engineering · <span class="accent">Sharda University</span></h3><span class="t-date">CGPA 8.9 / 10</span></div>
+          <ul><li>Coursework: Data Structures &amp; Algorithms, DBMS, Operating Systems.</li></ul>
         </li>
       </ol>
     </section>
