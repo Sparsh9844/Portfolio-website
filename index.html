@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sparsh Chauhan — Full Stack & AI Developer</title>
+  <meta name="description" content="Sparsh Chauhan — Full Stack Developer building scalable, AI-integrated web apps with React, Node.js, Next.js, MongoDB and PostgreSQL." />
+  <meta property="og:title" content="Sparsh Chauhan — Full Stack & AI Developer" />
+  <meta property="og:description" content="Scalable real-time systems, RAG pipelines and AI-powered SaaS. See the live projects." />
+  <meta name="theme-color" content="#07070c" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2307070c'/><text x='50' y='66' font-size='52' text-anchor='middle' font-family='monospace' fill='%23a78bfa'>&lt;S/&gt;</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <a href="#top" class="logo"><span class="accent">&lt;</span>sparsh<span class="accent">/&gt;</span></a>
+    <nav class="nav-links">
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#projects">projects</a>
+      <a href="#experience">experience</a>
+      <a href="#contact">contact</a>
+    </nav>
+    <button class="kbd-btn" id="openPalette" aria-label="Open command palette">
+      <span>Search</span><kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text reveal">
+        <p class="status"><span class="pulse"></span> Open to internships &amp; SDE roles</p>
+        <h1>
+          Hi, I'm <span class="gradient-text">Sparsh Chauhan</span>.<br />
+          I build <span class="typed" id="typed">scalable systems</span><span class="caret">|</span>
+        </h1>
+        <p class="lead">
+          Full Stack Developer &amp; AI/ML Intern. I design real-time backends, RAG pipelines and
+          AI-powered SaaS products with React, Node.js and Next.js, and I ship them to production.
+        </p>
+        <div class="cta">
+          <a href="#projects" class="btn btn-primary">View live projects →</a>
+          <a href="https://github.com/Sparsh9844" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+          <a href="https://www.linkedin.com/in/sparsh-chauhan0077" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="terminal reveal" aria-label="Terminal introduction">
+        <div class="term-bar">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <span class="term-title">sparsh@portfolio: ~</span>
+        </div>
+        <pre class="term-body" id="terminal"></pre>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats reveal">
+      <div class="stat"><span class="num" data-count="4">0</span><span class="label">live apps on Vercel</span></div>
+      <div class="stat"><span class="num" data-count="25" data-suffix="+">0</span><span class="label">public repos</span></div>
+      <div class="stat"><span class="num" data-count="20" data-suffix="+">0</span><span class="label">technologies used</span></div>
+      <div class="stat"><span class="num">AWS</span><span class="label">Certified Cloud Practitioner</span></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2 class="section-title reveal"><span class="hash">01.</span> about_me<span class="accent">()</span></h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm a Computer Science &amp; Engineering student at <strong>Sharda University</strong> (class of 2028)
+            and an <strong>AI/ML Intern at AiDoBOT Technologies</strong>, where I build agent-style AI systems
+            and ML pipelines.
+          </p>
+          <p>
+            I like the hard parts of the stack: horizontally scaling WebSockets with Redis Pub/Sub,
+            keeping video playback in sync across clients, and making LLM answers
+            <em>verifiable</em> with citations and grounding checks. I care about clean architecture and
+            interfaces that feel fast.
+          </p>
+          <p class="muted">Right now I'm exploring agentic AI, system design and Docker-based deployments.</p>
+        </div>
+        <div class="code-card reveal">
+<pre><code><span class="kw">const</span> <span class="var">sparsh</span> = {
+  <span class="prop">role</span>: <span class="str">"Full Stack Developer"</span>,
+  <span class="prop">location</span>: <span class="str">"Noida, India"</span>,
+  <span class="prop">education</span>: <span class="str">"B.Tech CSE @ Sharda '28"</span>,
+  <span class="prop">currently</span>: <span class="str">"AI/ML Intern @ AiDoBOT"</span>,
+  <span class="prop">certified</span>: [<span class="str">"AWS Cloud Practitioner"</span>],
+  <span class="prop">loves</span>: [<span class="str">"real-time"</span>, <span class="str">"RAG"</span>, <span class="str">"DX"</span>],
+  <span class="prop">coffee</span>: <span class="bool">true</span>,
+};</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <h2 class="section-title reveal"><span class="hash">02.</span> tech_stack<span class="accent">()</span></h2>
+      <div class="skills-grid" id="skillsGrid"></div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2 class="section-title reveal"><span class="hash">03.</span> projects<span class="accent">()</span></h2>
+      <div class="filters reveal" id="filters" role="tablist"></div>
+      <div class="projects-grid" id="projectsGrid"></div>
+
+      <h3 class="sub-title reveal">// more builds &amp; experiments</h3>
+      <div class="mini-grid" id="miniGrid"></div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <h2 class="section-title reveal"><span class="hash">04.</span> experience<span class="accent">()</span></h2>
+      <ol class="timeline">
+        <li class="reveal">
+          <span class="t-dot"></span>
+          <div class="t-head"><h3>AI/ML Intern · <span class="accent">AiDoBOT Technologies Pvt. Ltd.</span></h3><span class="t-date">2026 — Present · On-site</span></div>
+          <ul>
+            <li>Building agent-like AI systems with OpenCode, Lovable, Cursor and Antigravity for autonomous task execution.</li>
+            <li>Training ML pipelines on Google Colab and Kaggle and integrating the models into scalable apps.</li>
+          </ul>
+        </li>
+        <li class="reveal">
+          <span class="t-dot"></span>
+          <div class="t-head"><h3>AWS Certified Cloud Practitioner · <span class="accent">Amazon Web Services</span></h3><span class="t-date">2025</span></div>
+          <ul><li>Validated foundational knowledge of AWS cloud services, security, architecture and pricing.</li></ul>
+        </li>
+        <li class="reveal">
+          <span class="t-dot"></span>
+          <div class="t-head"><h3>MERN Mentorship Program · <span class="accent">GeeksforGeeks</span></h3><span class="t-date">Training</span></div>
+          <ul><li>Hands-on full-stack training: React hooks, routing, state management, Node/Express APIs and MongoDB.</li></ul>
+        </li>
+        <li class="reveal">
+          <span class="t-dot"></span>
+          <div class="t-head"><h3>B.Tech, Computer Science &amp; Engineering · <span class="accent">Sharda University</span></h3><span class="t-date">Expected 2028</span></div>
+          <ul><li>Coursework: Data Structures &amp; Algorithms, DBMS, Operating Systems, System Design.</li></ul>
+        </li>
+      </ol>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact reveal">
+      <h2 class="section-title center"><span class="hash">05.</span> let's_connect<span class="accent">()</span></h2>
+      <p class="lead center">Have a role, a project or an idea? My inbox is open, and I usually reply within a day.</p>
+      <div class="contact-card">
+        <div class="contact-line">
+          <span class="prompt">$</span> <span>mail</span> <a href="mailto:rajputsparsh570@gmail.com" id="email">rajputsparsh570@gmail.com</a>
+          <button class="copy" id="copyEmail" aria-label="Copy email">copy</button>
+        </div>
+        <div class="socials">
+          <a href="https://github.com/Sparsh9844" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/sparsh-chauhan0077" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn ↗</a>
+          <a href="mailto:rajputsparsh570@gmail.com" class="btn btn-primary">Say hello →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Designed &amp; built by Sparsh Chauhan · <span class="muted">HTML, CSS &amp; vanilla JS · deployed on Vercel</span></p>
+  </footer>
+
+  <!-- COMMAND PALETTE -->
+  <div class="palette-backdrop" id="palette" hidden>
+    <div class="palette" role="dialog" aria-modal="true" aria-label="Command palette">
+      <input id="paletteInput" type="text" placeholder="Type a command or search projects..." autocomplete="off" />
+      <ul id="paletteList"></ul>
+      <div class="palette-foot"><kbd>↑</kbd><kbd>↓</kbd> navigate <kbd>Enter</kbd> open <kbd>Esc</kbd> close</div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Copied to clipboard ✓</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
